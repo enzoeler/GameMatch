@@ -24,6 +24,7 @@
                 <li><a href="matchmaking.html">Procurar Duo</a></li>
                 <li><a href="torneios.html">Torneios</a></li>
                 <li><a href="meuperfil.html">Meu Perfil</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
                 <li><a href="sobreogrupo.html">Sobre a Equipe</a></li>
             </ul>
         </nav>
@@ -31,101 +32,111 @@
 
     <main>
         <!-- Hero Section -->
-        <section>
+        <section class="hero-section">
             <h1>Chega de fila solo tóxica. Encontre seu duo real.</h1>
             <p>Cansado de cair com gente que kitou da partida ou não leva o jogo a sério? O GameMatch conecta você a jogadores amadores do seu nível exato para treinar, subir de elo e fechar a line sem estresse.</p>
-            <div>
-                <a href="matchmaking.html">Achar Jogadores Agora</a>
-                <a href="torneios.html">Explorar Campeonatos</a>
+            <div class="hero-buttons">
+                <a href="matchmaking.html" class="btn-primary">Achar Jogadores Agora</a>
+                <a href="torneios.html" class="btn-secondary">Explorar Campeonatos</a>
             </div>
         </section>
 
         <!-- O Problema -->
-        <section id="sobre">
-            <h2>Por que criamos o GameMatch?</h2>
-            <p>A gente sabe como é difícil evoluir nos games competitivos jogando sozinho. A comunidade amador pedia por um espaço onde o entrosamento, o respeito e a vontade de vencer falassem mais alto do que o ranqueamento aleatório.</p>
+        <section class="info-section">
+            <h2 class="section-title">Por que criamos o GameMatch?</h2>
+            <div class="card-single">
+                <p>A gente sabe como é difícil evoluir nos games competitivos jogando sozinho. A comunidade amadora pedia por um espaço onde o entrosamento, o respeito e a vontade de vencer falassem mais alto do que o ranqueamento aleatório.</p>
+            </div>
         </section>
 
         <!-- Como Funciona -->
-        <section id="como-funciona">
-            <h2>Como fazer o seu time acontecer</h2>
+        <section class="cards-section">
+            <h2 class="section-title">Como fazer o seu time acontecer</h2>
             
-            <article>
-                <h3>1. Monte seu perfil gamer</h3>
-                <p>Conta aí quais são seus jogos principais, seu elo atual e quais horários você tá online para jogar.</p>
-            </article>
+            <div class="cards-grid">
+                <article class="player-card">
+                    <h3>1. Monte seu perfil gamer</h3>
+                    <p>Conta aí quais são seus jogos principais, seu elo atual e quais horários você tá online para jogar.</p>
+                </article>
 
-            <article>
-                <h3>2. Conecte com a galera certa</h3>
-                <p>Use nossos filtros para achar duos ou completar a sua equipe com quem joga na mesma sintonia que você.</p>
-            </article>
+                <article class="player-card">
+                    <h3>2. Conecte com a galera certa</h3>
+                    <p>Use nossos filtros para achar duos ou completar a sua equipe com quem joga na mesma sintonia que você.</p>
+                </article>
 
-            <article>
-                <h3>3. Entrem nos campeonatos</h3>
-                <p>Com o time fechado e entrosado, é só colar nos nossos torneios amadores e disputar premiações reais.</p>
-            </article>
+                <article class="player-card">
+                    <h3>3. Entrem nos campeonatos</h3>
+                    <p>Com o time fechado e entrosado, é só colar nos nossos torneios amadores e disputar premiações reais.</p>
+                </article>
+            </div>
         </section>
 
         <!-- Campeonatos -->
-        <section id="campeonatos">
-            <h2>Ligas e Campeonatos Ativos</h2>
-            <p>Espaços estruturados para você testar o nível da sua equipe:</p>
-            <ul>
-                <li>
-                    <strong>Counter-Strike 2 (CS2)</strong>
+        <section class="cards-section">
+            <h2 class="section-title">Ligas e Campeonatos Ativos</h2>
+            <p class="section-subtitle">Espaços estruturados para você testar o nível da sua equipe:</p>
+            
+            <div class="cards-grid">
+                <article class="player-card feature-card">
+                    <h3>Counter-Strike 2 (CS2)</h3>
                     <p>Confrontos semanais divididos por tiers técnicos.</p>
-                    <a href="torneios.html">Ver chaves e detalhes →</a>
-                </li>
-                <li>
-                    <strong>Valorant</strong>
+                    <br>
+                    <a href="torneios.html" class="btn-card">Ver chaves e detalhes →</a>
+                </article>
+
+                <article class="player-card feature-card">
+                    <h3>Valorant</h3>
                     <p>Ideal para duplas e lineups completas testarem táticas.</p>
-                    <a href="torneios.html">Ver chaves e detalhes →</a>
-                </li>
-                <li>
-                    <strong>League of Legends / Wild Rift</strong>
+                    <br>
+                    <a href="torneios.html" class="btn-card">Ver chaves e detalhes →</a>
+                </article>
+
+                <article class="player-card feature-card">
+                    <h3>League of Legends / Wild Rift</h3>
                     <p>Foco total em sinergia de mapa e objetivos.</p>
-                    <a href="torneios.html">Ver chaves e detalhes →</a>
-                </li>
-                <li>
-                    <strong>Free Fire (Mobile & Emulador)</strong>
+                    <br>
+                    <a href="torneios.html" class="btn-card">Ver chaves e detalhes →</a>
+                </article>
+
+                <article class="player-card feature-card">
+                    <h3>Free Fire (Mobile & Emulador)</h3>
                     <p>Quedas intensas de 4v4 valendo premiação.</p>
-                    <a href="torneios.html">Ver chaves e detalhes →</a>
-                </li>
-            </ul>
+                    <br>
+                    <a href="torneios.html" class="btn-card">Ver chaves e detalhes →</a>
+                </article>
+            </div>
         </section>
 
         <!-- Chamada para Ação / Cadastro -->
-        <section id="cadastro">
-            <h2>Bora fechar o lobby?</h2>
-            <p>Crie sua identificação na plataforma e comece a jogar com quem realmente veste a camisa da equipe.</p>
-            
-            <form action="meuperfil.html" method="GET">
+        <section class="filter-box">
+            <form action="meuperfil.html" method="GET" class="filter-form">
                 <fieldset>
-                    <legend>Criar minha Tag</legend>
+                    <legend>Bora fechar o lobby?</legend>
+                    <p style="margin-bottom: 16px;">Crie sua identificação na plataforma e comece a jogar com quem realmente veste a camisa da equipe.</p>
                     
-                    <div>
-                        <label for="nome">Seu Nick / GamerTag:</label>
-                        <input type="text" id="nome" name="nome" placeholder="Ex: ShadowHunter" required>
+                    <div class="filter-grid">
+                        <div class="field-group">
+                            <label for="nome">Seu Nick / GamerTag:</label>
+                            <input type="text" id="nome" name="nome" placeholder="Ex: ShadowHunter" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="email">Melhor E-mail:</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="jogo">Jogo Principal:</label>
+                            <select id="jogo" name="jogo">
+                                <option value="ff">Free Fire (Mobile/Emulador)</option>
+                                <option value="valorant">Valorant</option>
+                                <option value="lol">League of Legends</option>
+                                <option value="cs2">Counter-Strike 2</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div>
-                        <label for="email">Melhor E-mail:</label>
-                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-                    </div>
-
-                    <div>
-                        <label for="jogo">Jogo Principal:</label>
-                        <select id="jogo" name="jogo">
-                            <option value="ff">Free Fire (Mobile/Emulador)</option>
-                            <option value="valorant">Valorant</option>
-                            <option value="lol">League of Legends</option>
-                            <option value="cs2">Counter-Strike 2</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <button type="submit">Entrar na Comunidade</button>
-                    </div>
+                    <button type="submit" class="btn-submit" style="margin-top: 12px;">Entrar na Comunidade</button>
                 </fieldset>
             </form>
         </section>
@@ -138,6 +149,7 @@
                 <li><a href="home.html">Início</a></li>
                 <li><a href="matchmaking.html">Procurar Duo</a></li>
                 <li><a href="torneios.html">Torneios</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
                 <li><a href="sobreogrupo.html">Sobre a Equipe</a></li>
             </ul>
         </nav>

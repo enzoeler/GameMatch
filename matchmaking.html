@@ -24,70 +24,120 @@
                 <li><a href="matchmaking.html">Procurar Duo</a></li>
                 <li><a href="torneios.html">Torneios</a></li>
                 <li><a href="meuperfil.html">Meu Perfil</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
                 <li><a href="sobreogrupo.html">Sobre a Equipe</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>Salas e Jogadores Online</h1>
-        <p>Filtre por jogo ou função para encontrar aquela pessoa que faltava para fechar a sua call hoje à noite.</p>
+        <div class="page-header">
+            <h1>Salas e Jogadores Online</h1>
+            <p>Filtre por jogo ou função para encontrar aquela pessoa que faltava para fechar a sua call hoje à noite.</p>
+        </div>
 
-        <!-- Filtros -->
-        <section id="cadastro" style="margin-bottom: 24px;">
-            <form action="matchmaking.html" method="GET">
+        <!-- Filtros em Layout Flex de Linha -->
+        <section class="filter-box">
+            <form action="matchmaking.html" method="GET" class="filter-form">
                 <fieldset>
                     <legend>Filtrar Lobbys</legend>
-                    <div>
-                        <label for="jogo-filtro">Escolha o Game:</label>
-                        <select id="jogo-filtro" name="jogo">
-                            <option value="todos">Todos os jogos</option>
-                            <option value="ff">Free Fire (Mobile/Emulador)</option>
-                            <option value="valorant">Valorant</option>
-                            <option value="lol">League of Legends</option>
-                        </select>
+                    <div class="filter-grid">
+                        <div class="field-group">
+                            <label for="jogo-filtro">Escolha o Game:</label>
+                            <select id="jogo-filtro" name="jogo">
+                                <option value="todos">Todos os jogos</option>
+                                <option value="ff">Free Fire (Mobile/Emulador)</option>
+                                <option value="valorant">Valorant</option>
+                                <option value="lol">League of Legends / Wild Rift</option>
+                                <option value="cs2">Counter-Strike 2</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label for="funcao-filtro">Sua Função Favorita:</label>
+                            <select id="funcao-filtro" name="funcao">
+                                <option value="qualquer">Qualquer uma</option>
+                                <option value="duelista">Duelista / Rush</option>
+                                <option value="suporte">Suporte / Iniciar</option>
+                                <option value="sniper">Sniper / AWP</option>
+                            </select>
+                        </div>
                     </div>
-                    <div>
-                        <label for="funcao-filtro">Sua Função Favorita:</label>
-                        <select id="funcao-filtro" name="funcao">
-                            <option value="qualquer">Qualquer uma</option>
-                            <option value="duelista">Duelista / Rush</option>
-                            <option value="suporte">Suporte / Iniciar</option>
-                            <option value="sniper">Sniper / AWP</option>
-                        </select>
-                    </div>
-                    <button type="submit">Filtrar Jogadores</button>
+                    <button type="submit" class="btn-submit">Filtrar Jogadores</button>
                 </fieldset>
             </form>
         </section>
 
-        <!-- Lista de Anúncios -->
-        <section id="como-funciona">
-            <h2>Anúncios Ativos na Comunidade</h2>
+        <!-- Seção de Cartões Com Título em Largura Total -->
+        <section class="cards-section">
+            <h2 class="section-title">Anúncios Ativos na Comunidade</h2>
 
-            <article>
-                <h3>VortexGamer <span style="font-size: 12px; color: var(--cor-secundario); font-weight: normal;">• Free Fire</span></h3>
-                <p><strong>Elo:</strong> Mestre | <strong>Função:</strong> Sniper</p>
-                <p>"Procurando duo focado em call no Discord para subir ranqueada agora à noite. Sem rage, foco em evolução."</p>
-                <br>
-                <a href="meuperfil.html">Chamar para o Lobby →</a>
-            </article>
+            <div class="cards-grid">
+                <!-- Cartão 1 -->
+                <article class="player-card">
+                    <div class="card-header">
+                        <div class="user-meta">
+                            <h3>VortexGamer</h3>
+                            <span class="game-tag">Free Fire</span>
+                        </div>
+                        <span class="status-online">Online</span>
+                    </div>
 
-            <article>
-                <h3>Alpha Squad <span style="font-size: 12px; color: var(--cor-secundario); font-weight: normal;">• Wild Rift</span></h3>
-                <p><strong>Elo:</strong> Diamante | <strong>Buscando:</strong> +2 Integrantes</p>
-                <p>"Nossa line tá fechando treino diário pras próximas copas amadoras. Quem tiver disposição para focar, cola com a gente."</p>
-                <br>
-                <a href="torneios.html">Ver Torneios da Line →</a>
-            </article>
+                    <div class="card-details">
+                        <p><strong>Elo:</strong> <span class="badge-elo">Mestre</span></p>
+                        <p><strong>Função:</strong> Sniper</p>
+                    </div>
 
-            <article>
-                <h3>ShadowHunter <span style="font-size: 12px; color: var(--cor-secundario); font-weight: normal;">• Valorant</span></h3>
-                <p><strong>Elo:</strong> Platina II | <strong>Função:</strong> Controlador</p>
-                <p>"Quero achar um trio gente boa para jogar uns mapas competitivos sem estresse e treinar táticas novas."</p>
-                <br>
-                <a href="meuperfil.html">Chamar para o Lobby →</a>
-            </article>
+                    <p class="card-quote">"Procurando duo focado em call no Discord para subir ranqueada agora à noite. Sem rage, foco em evolução."</p>
+
+                    <div class="card-footer">
+                        <a href="meuperfil.html" class="btn-card">Chamar para o Lobby →</a>
+                    </div>
+                </article>
+
+                <!-- Cartão 2 -->
+                <article class="player-card feature-card">
+                    <div class="card-header">
+                        <div class="user-meta">
+                            <h3>Alpha Squad</h3>
+                            <span class="game-tag">Wild Rift</span>
+                        </div>
+                        <span class="status-online recruit">Recrutando (+2)</span>
+                    </div>
+
+                    <div class="card-details">
+                        <p><strong>Elo:</strong> <span class="badge-elo">Diamante</span></p>
+                        <p><strong>Buscando:</strong> Mid & Suporte</p>
+                    </div>
+
+                    <p class="card-quote">"Nossa line tá fechando treino diário pras próximas copas amadoras. Quem tiver disposição para focar, cola com a gente."</p>
+
+                    <div class="card-footer">
+                        <a href="torneios.html" class="btn-card">Ver Torneios da Line →</a>
+                    </div>
+                </article>
+
+                <!-- Cartão 3 -->
+                <article class="player-card">
+                    <div class="card-header">
+                        <div class="user-meta">
+                            <h3>ShadowHunter</h3>
+                            <span class="game-tag">Valorant</span>
+                        </div>
+                        <span class="status-online">Online</span>
+                    </div>
+
+                    <div class="card-details">
+                        <p><strong>Elo:</strong> <span class="badge-elo">Platina II</span></p>
+                        <p><strong>Função:</strong> Controlador</p>
+                    </div>
+
+                    <p class="card-quote">"Quero achar um trio gente boa para jogar uns mapas competitivos sem estresse e treinar táticas novas."</p>
+
+                    <div class="card-footer">
+                        <a href="meuperfil.html" class="btn-card">Chamar para o Lobby →</a>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
 
@@ -97,6 +147,7 @@
             <ul>
                 <li><a href="home.html">Início</a></li>
                 <li><a href="torneios.html">Torneios</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
                 <li><a href="sobreogrupo.html">Sobre a Equipe</a></li>
             </ul>
         </nav>

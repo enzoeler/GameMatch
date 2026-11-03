@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Ajuda & Suporte - GameMatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav aria-label="Navegação Principal">
+            <p><strong>GameMatch</strong></p>
+            
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-btn" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul>
+                <li><a href="home.html">Início</a></li>
+                <li><a href="matchmaking.html">Procurar Duo</a></li>
+                <li><a href="torneios.html">Torneios</a></li>
+                <li><a href="meuperfil.html">Meu Perfil</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
+                <li><a href="sobreogrupo.html">Sobre a Equipe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Cabeçalho da Página -->
+        <div class="page-header" style="text-align: center;">
+            <h1>Como podemos te ajudar hoje?</h1>
+            <p>Encontre respostas rápidas, guias da comunidade ou fale diretamente com a equipe do GameMatch.</p>
+
+            <!-- Barra de Busca Rápida no Suporte -->
+            <div style="max-width: 600px; margin: 20px auto 0 auto;">
+                <input type="text" placeholder="🔍 Digite sua dúvida (ex: como resgatar prêmio, denúncia, duo)..." style="padding: 14px 18px; font-size: 15px; border-radius: 30px;">
+            </div>
+        </div>
+
+        <!-- Ações Rápidas / Atalhos Úteis -->
+        <section class="cards-section">
+            <h2 class="section-title">Acesso Rápido</h2>
+            <div class="cards-grid">
+                <article class="player-card feature-card">
+                    <div class="card-header">
+                        <h3>🟢 Status dos Servidores</h3>
+                    </div>
+                    <p>Verifique se os serviços de matchmaking e torneios estão operando normalmente.</p>
+                    <div class="card-footer" style="margin-top: 10px;">
+                        <span class="game-tag" style="color: #10b981; border-color: #10b981;">Todos Sistemas Online</span>
+                    </div>
+                </article>
+
+                <article class="player-card feature-card">
+                    <div class="card-header">
+                        <h3>🛡️ Central de Denúncias</h3>
+                    </div>
+                    <p>Reporte toxidade, uso de cheats ou parceiros que abandonaram a partida.</p>
+                    <div class="card-footer" style="margin-top: 10px;">
+                        <a href="#formulario-suporte" class="btn-card">Abrir Ticket de Denúncia →</a>
+                    </div>
+                </article>
+
+                <article class="player-card feature-card">
+                    <div class="card-header">
+                        <h3>📜 Livro de Regras</h3>
+                    </div>
+                    <p>Consulte o regulamento oficial de partidas, formatos e premiações dos torneios.</p>
+                    <div class="card-footer" style="margin-top: 10px;">
+                        <a href="torneios.html" class="btn-card">Ler Regulamento →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Perguntas Frequentes (FAQ Expandido) -->
+        <section class="cards-section">
+            <h2 class="section-title">Dúvidas Frequentes da Comunidade</h2>
+
+            <div class="cards-grid">
+                <article class="player-card">
+                    <div class="card-header">
+                        <h3>Como achar um Duo ideal?</h3>
+                        <span class="game-tag">Matchmaking</span>
+                    </div>
+                    <p>Acesse a aba <strong>Procurar Duo</strong>, use os filtros por jogo (Free Fire, Valorant, CS2, LoL) e elo. Ao encontrar um jogador compatível, clique em <em>Chamar para o Lobby</em> para iniciar o contato.</p>
+                </article>
+
+                <article class="player-card">
+                    <div class="card-header">
+                        <h3>Como funcionam as premiações?</h3>
+                        <span class="game-tag">Torneios</span>
+                    </div>
+                    <p>Após o término do campeonato, o capitão da equipe vencedora recebe a instrução via e-mail e painel do perfil para resgate via Pix ou Gift Cards em até 48 horas úteis.</p>
+                </article>
+
+                <article class="player-card">
+                    <div class="card-header">
+                        <h3>O que fazer se o parceiro kitar?</h3>
+                        <span class="game-tag">Fair Play</span>
+                    </div>
+                    <p>Se o jogador aceitou o duo e abandonou sem avisar ou agiu com desrespeito, você pode avaliar o perfil dele positivamente ou negativamente e enviar um relatório pelo suporte.</p>
+                </article>
+
+                <article class="player-card">
+                    <div class="card-header">
+                        <h3>Como mudar meu Nick ou Elo?</h3>
+                        <span class="game-tag">Minha Conta</span>
+                    </div>
+                    <p>Vá na aba <strong>Meu Perfil</strong>, clique no bloco de edição ao final da página para atualizar sua bio, horários de jogo e preferências de modo competitivo.</p>
+                </article>
+
+                <article class="player-card">
+                    <div class="card-header">
+                        <h3>Como criar uma Lineup / Time?</h3>
+                        <span class="game-tag">Equipes</span>
+                    </div>
+                    <p>Você pode anunciar vagas na aba Procurar Duo marcando a tag <em>Recrutando</em>. Assim que tiver os integrantes, basta o capitão inscrever o time nos campeonatos ativos.</p>
+                </article>
+
+                <article class="player-card">
+                    <div class="card-header">
+                        <h3>Tenho problemas de conexão no chat</h3>
+                        <span class="game-tag">Técnico</span>
+                    </div>
+                    <p>Verifique se sua conta do Discord está corretamente vinculada no perfil ou limpe o cache do seu navegador para restaurar a atualização dos feeds em tempo real.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Comunidade Externa & Discord -->
+        <section class="card-single" style="margin-bottom: 32px; text-align: center;">
+            <h2 class="section-title" style="margin-bottom: 8px;">Precisa de suporte em tempo real?</h2>
+            <p style="margin-bottom: 16px;">Entre na nossa comunidade no Discord! Nossos moderadores e a galera da comunidade estão online para tirar dúvidas 24/7.</p>
+            <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                <a href="#" class="btn-primary" style="width: auto; padding: 10px 24px;">Entrar no Discord Oficial</a>
+            </div>
+        </section>
+
+        <!-- Formulário de Atendimento Completo -->
+        <section id="formulario-suporte" class="filter-box">
+            <form action="suporte.html" method="POST" class="filter-form">
+                <fieldset>
+                    <legend>Enviar Ticket de Atendimento</legend>
+                    
+                    <div class="filter-grid">
+                        <div class="field-group">
+                            <label for="nome-suporte">Seu Nome / GamerTag:</label>
+                            <input type="text" id="nome-suporte" name="nome" placeholder="Ex: ShadowPlayer#1234" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="email-suporte">E-mail Cadastrado:</label>
+                            <input type="email" id="email-suporte" name="email" placeholder="seu@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="filter-grid" style="margin-top: 14px;">
+                        <div class="field-group">
+                            <label for="assunto">Categoria do Problema:</label>
+                            <select id="assunto" name="assunto">
+                                <option value="duvida">Dúvidas Frequentes / Uso da Plataforma</option>
+                                <option value="torneio">Problemas com Inscrição ou Premiação de Torneio</option>
+                                <option value="denuncia">Denúncia de Toxicidade / Cheater / Abandonos</option>
+                                <option value="conta">Problemas no Perfil / Alteração de Dados</option>
+                                <option value="bug">Reportar Bug / Falha no Site</option>
+                                <option value="sugestao">Sugestão de Funcionalidade</option>
+                            </select>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="prioridade">Urgência:</label>
+                            <select id="prioridade" name="prioridade">
+                                <option value="baixa">Baixa (Dúvidas gerais)</option>
+                                <option value="media">Média (Partidas / Conta)</option>
+                                <option value="alta">Alta (Torneio ocorrendo agora)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field-group" style="margin-top: 14px;">
+                        <label for="mensagem">Descreva detalhadamente o ocorrido:</label>
+                        <input type="text" id="mensagem" name="mensagem" placeholder="Informe nicks envolvidos, nome do torneio ou detalhes do erro..." required>
+                    </div>
+
+                    <button type="submit" class="btn-submit" style="margin-top: 16px;">Enviar Ticket para Análise</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GameMatch / Arena Amador. Todos os direitos reservados.</p>
+        <nav aria-label="Links Rodapé">
+            <ul>
+                <li><a href="home.html">Início</a></li>
+                <li><a href="matchmaking.html">Procurar Duo</a></li>
+                <li><a href="torneios.html">Torneios</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
+                <li><a href="sobreogrupo.html">Sobre a Equipe</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>

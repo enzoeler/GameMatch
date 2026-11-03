@@ -24,53 +24,74 @@
                 <li><a href="matchmaking.html">Procurar Duo</a></li>
                 <li><a href="torneios.html">Torneios</a></li>
                 <li><a href="meuperfil.html">Meu Perfil</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
                 <li><a href="sobreogrupo.html">Sobre a Equipe</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>Arena de Campeonatos</h1>
-        <p>Mostre do que sua equipe é capaz. Inscreva seu time nos torneios amadores da semana e dispute premiações.</p>
+        <div class="page-header">
+            <h1>Arena de Campeonatos</h1>
+            <p>Mostre do que sua equipe é capaz. Inscreva seu time nos torneios amadores da semana e dispute premiações.</p>
+        </div>
 
-        <section id="campeonatos">
-            <h2>Campeonatos Abertos</h2>
-            <ul>
-                <li>
-                    <strong>Copa Amadora Free Fire (Emulador)</strong>
-                    <p>Formato: Squad 4v4 | Vagas: 28 de 32 preenchidas</p>
-                    <p style="color: var(--cor-secundario); font-weight: 600; margin-top: 6px;">Premiação: R$ 1.500,00</p>
-                </li>
-                <li>
-                    <strong>Liga Wild Rift - Open Series</strong>
-                    <p>Formato: 5v5 | Vagas: 12 de 16 preenchidas</p>
-                    <p style="color: var(--cor-secundario); font-weight: 600; margin-top: 6px;">Premiação: Gift Cards + Troféu Digital</p>
-                </li>
-            </ul>
+        <!-- Lista de Campeonatos em Cards -->
+        <section class="cards-section">
+            <h2 class="section-title">Campeonatos Abertos</h2>
+            
+            <div class="cards-grid">
+                <article class="player-card feature-card">
+                    <div class="card-header">
+                        <h3>Copa Amadora Free Fire</h3>
+                        <span class="game-tag">Emulador / Mobile</span>
+                    </div>
+                    <div class="card-details">
+                        <p><strong>Formato:</strong> Squad 4v4</p>
+                        <p><strong>Vagas:</strong> 28 / 32 Times</p>
+                    </div>
+                    <p style="color: var(--cor-secundario); font-weight: 700;">Premiação: R$ 1.500,00</p>
+                </article>
+
+                <article class="player-card feature-card">
+                    <div class="card-header">
+                        <h3>Liga Wild Rift - Open</h3>
+                        <span class="game-tag">Mobile</span>
+                    </div>
+                    <div class="card-details">
+                        <p><strong>Formato:</strong> 5v5</p>
+                        <p><strong>Vagas:</strong> 12 / 16 Times</p>
+                    </div>
+                    <p style="color: var(--cor-secundario); font-weight: 700;">Premiação: Gift Cards + Troféu</p>
+                </article>
+            </div>
         </section>
 
         <!-- Formulário de Inscrição -->
-        <section id="cadastro">
-            <h2>Inscrever Meu Time</h2>
-            <form action="torneios.html" method="POST">
+        <section class="filter-box" style="margin-top: 32px;">
+            <form action="torneios.html" method="POST" class="filter-form">
                 <fieldset>
-                    <legend>Dados do Squad</legend>
-                    <div>
+                    <legend>Inscrever Meu Time</legend>
+                    
+                    <div class="field-group">
                         <label for="time">Nome da Equipe:</label>
                         <input type="text" id="time" name="time" placeholder="Ex: Alpha E-Sports" required>
                     </div>
-                    <div>
+
+                    <div class="field-group">
                         <label for="campeonato-escolhido">Escolha o Campeonato:</label>
                         <select id="campeonato-escolhido" name="campeonato">
                             <option value="ff">Copa Amadora Free Fire</option>
                             <option value="wr">Liga Wild Rift Open Series</option>
                         </select>
                     </div>
-                    <div>
+
+                    <div class="field-group">
                         <label for="capitao">Seu Nick (Capitão / Responsável):</label>
                         <input type="text" id="capitao" name="capitao" placeholder="Ex: Captain#1234" required>
                     </div>
-                    <button type="submit">Garantir Vaga da Equipe</button>
+
+                    <button type="submit" class="btn-submit">Garantir Vaga da Equipe</button>
                 </fieldset>
             </form>
         </section>
@@ -82,6 +103,7 @@
             <ul>
                 <li><a href="home.html">Início</a></li>
                 <li><a href="matchmaking.html">Procurar Duo</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
                 <li><a href="sobreogrupo.html">Sobre a Equipe</a></li>
             </ul>
         </nav>

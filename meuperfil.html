@@ -24,54 +24,85 @@
                 <li><a href="matchmaking.html">Procurar Duo</a></li>
                 <li><a href="torneios.html">Torneios</a></li>
                 <li><a href="meuperfil.html">Meu Perfil</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
                 <li><a href="sobreogrupo.html">Sobre a Equipe</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>Painel do Jogador</h1>
-        <p>Aqui você acompanha o seu histórico na plataforma, reputação e preferências de jogo.</p>
+        <div class="page-header">
+            <h1>Painel do Jogador</h1>
+            <p>Aqui você acompanha o seu histórico na plataforma, reputação e preferências de jogo.</p>
+        </div>
 
-        <!-- Informações do Perfil -->
-        <section id="sobre">
-            <h2>ShadowPlayer#2026</h2>
-            <p><strong>Plataforma:</strong> Mobile & Emulador</p>
-            <p><strong>Reputação na Comunidade:</strong> ⭐ 4.9 / 5.0 (Parceiro Confiável)</p>
-            <p style="margin-top: 10px;"><a href="matchmaking.html">Procurar salas abertas agora →</a></p>
+        <!-- Card do Perfil -->
+        <section class="info-section">
+            <div class="player-card feature-card">
+                <div class="card-header">
+                    <div class="user-meta">
+                        <h3>ShadowPlayer#2026</h3>
+                        <span class="game-tag">Mobile & Emulador</span>
+                    </div>
+                    <span class="status-online">Online</span>
+                </div>
+                
+                <div class="card-details" style="margin-top: 10px;">
+                    <p><strong>Reputação na Comunidade:</strong> ⭐ 4.9 / 5.0 (Parceiro Confiável)</p>
+                </div>
+
+                <div class="card-footer" style="margin-top: 12px;">
+                    <a href="matchmaking.html" class="btn-card">Procurar salas abertas agora →</a>
+                </div>
+            </div>
         </section>
 
-        <!-- Estatísticas -->
-        <section id="como-funciona">
-            <h2>Seus Dados Competitivos</h2>
-            <article>
-                <h3>Free Fire</h3>
-                <p><strong>Elo Atual:</strong> Mestre (3.250 Pts)</p>
-                <p>Aproveitamento: 64% nas últimas partidas</p>
-            </article>
-            <article>
-                <h3>Valorant</h3>
-                <p><strong>Elo Atual:</strong> Ouro III</p>
-                <p>Agentes mais jogados: Sova / Fade</p>
-            </article>
-            <article>
-                <h3>Histórico em Torneios</h3>
-                <p>4 campeonatos disputados</p>
-                <p>Melhor resultado: Vice-campeão</p>
-            </article>
+        <!-- Estatísticas Organizadas em Grid -->
+        <section class="cards-section">
+            <h2 class="section-title">Seus Dados Competitivos</h2>
+            
+            <div class="cards-grid">
+                <article class="player-card">
+                    <div class="card-header">
+                        <h3>Free Fire</h3>
+                        <span class="badge-elo">Mestre</span>
+                    </div>
+                    <p><strong>Pontuação:</strong> 3.250 Pts</p>
+                    <p><strong>Aproveitamento:</strong> 64% nas últimas partidas</p>
+                </article>
+
+                <article class="player-card">
+                    <div class="card-header">
+                        <h3>Valorant</h3>
+                        <span class="badge-elo">Ouro III</span>
+                    </div>
+                    <p><strong>Função:</strong> Iniciador / Controlador</p>
+                    <p><strong>Agentes mais jogados:</strong> Sova / Fade</p>
+                </article>
+
+                <article class="player-card">
+                    <div class="card-header">
+                        <h3>Histórico de Torneios</h3>
+                        <span class="game-tag">4 Disputados</span>
+                    </div>
+                    <p><strong>Conquistas:</strong> 1x Vice-campeão, 2x Semifinalista</p>
+                    <p><strong>Fair Play:</strong> 100% de presença e pontualidade</p>
+                </article>
+            </div>
         </section>
 
         <!-- Editar Perfil -->
-        <section id="cadastro">
-            <h2>Editar Informações</h2>
-            <form action="meuperfil.html" method="POST">
+        <section class="filter-box">
+            <form action="meuperfil.html" method="POST" class="filter-form">
                 <fieldset>
-                    <legend>Configurações da Conta</legend>
-                    <div>
+                    <legend>Editar Informações</legend>
+                    
+                    <div class="field-group">
                         <label for="bio">Seu Recado / Bio:</label>
                         <input type="text" id="bio" name="bio" value="Jogando focado em evoluir e fechar line para campeonatos.">
                     </div>
-                    <div>
+
+                    <div class="field-group">
                         <label for="horario">Horários que costuma jogar:</label>
                         <select id="horario" name="horario">
                             <option value="noite">Noite (19h às 23h)</option>
@@ -79,7 +110,8 @@
                             <option value="fds">Apenas finais de semana</option>
                         </select>
                     </div>
-                    <button type="submit">Salvar Alterações</button>
+
+                    <button type="submit" class="btn-submit">Salvar Alterações</button>
                 </fieldset>
             </form>
         </section>
@@ -92,6 +124,7 @@
                 <li><a href="home.html">Início</a></li>
                 <li><a href="matchmaking.html">Procurar Duo</a></li>
                 <li><a href="torneios.html">Torneios</a></li>
+                <li><a href="suporte.html">Suporte</a></li>
                 <li><a href="sobreogrupo.html">Sobre a Equipe</a></li>
             </ul>
         </nav>
