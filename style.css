@@ -292,6 +292,7 @@ p {
 .btn-submit {
     background-color: var(--cor-principal);
     color: #ffffff;
+   margin-top: 8px;
     border: none;
     box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
 }
