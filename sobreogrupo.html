@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre a Equipe - GameMatch</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23131b2e'/%3E%3Cpath d='M18 24h28a8 8 0 0 1 8 8v8a6 6 0 0 1-10.2 4.2L39 39.5H25l-4.8 4.7A6 6 0 0 1 10 40v-8a8 8 0 0 1 8-8z' fill='%238b5cf6'/%3E%3Cpath d='M21 29v6M18 32h6' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='43' cy='30' r='2' fill='%2306b6d4'/%3E%3Ccircle cx='47' cy='34' r='2' fill='%2306b6d4'/%3E%3C/svg%3E">
 </head>
 <body>
 
     <header>
         <nav aria-label="Navegação Principal">
-            <p><strong>GameMatch</strong></p>
+            <a href="home.html" class="brand-logo">
+                <svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="64" height="64" rx="16" fill="#182238" stroke="#23314d" stroke-width="2"/>
+                    <path d="M18 24h28a8 8 0 0 1 8 8v8a6 6 0 0 1-10.2 4.2L39 39.5H25l-4.8 4.7A6 6 0 0 1 10 40v-8a8 8 0 0 1 8-8z" fill="#8b5cf6"/>
+                    <path d="M21 29v6M18 32h6" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="43" cy="30" r="2.2" fill="#06b6d4"/>
+                    <circle cx="47" cy="34" r="2.2" fill="#06b6d4"/>
+                </svg>
+                <strong>GameMatch</strong>
+            </a>
             
             <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" class="menu-btn" aria-label="Abrir Menu">
@@ -36,7 +46,6 @@
             <p>Conheça a galera por trás do projeto e quais são os superpoderes (e memes) de cada um.</p>
         </div>
 
-        <!-- Integrantes em Cards em Grid -->
         <section class="cards-section">
             <h2 class="section-title">Equipe de Desenvolvimento</h2>
             
@@ -76,7 +85,6 @@
             </div>
         </section>
 
-        <!-- Foto do Grupo Centralizada -->
         <section class="cards-section" style="margin-top: 36px;">
             <div class="player-card foto-grupo-card" style="align-items: center;">
                 <h2 class="section-title" style="text-align: center; margin-bottom: 12px;">Bastidores da Equipe</h2>
@@ -99,5 +107,6 @@
         </nav>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
