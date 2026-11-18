@@ -123,7 +123,14 @@ header nav {
     position: relative;
 }
 
-header nav p strong {
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.brand-logo strong {
     font-size: 20px;
     font-weight: 800;
     letter-spacing: -0.5px;
