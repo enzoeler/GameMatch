@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const paginaAtual = window.location.pathname.split("/").pop() || "home.html";
+    const paginaAtual = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll("header nav ul a").forEach(link => {
         if (link.getAttribute("href") === paginaAtual) {
             link.style.color = "#06b6d4";
@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const menuToggle = document.getElementById("menu-toggle");
     document.querySelectorAll("header ul a").forEach(link => {
+        link.link?.addEventListener?.("click", () => {
+            if (menuToggle) menuToggle.checked = false;
+        });
         link.addEventListener("click", () => {
             if (menuToggle) menuToggle.checked = false;
         });
@@ -134,56 +137,136 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const formTorneio = document.querySelector('form[action="torneios.html"]');
-    if (formTorneio) {
-        const gridTorneios = document.querySelector(".cards-grid");
+    const formCriarTorneio = document.getElementById("form-criar-torneio");
+    const formTorneio = document.getElementById("form-torneio");
+    const gridCampeonatos = document.getElementById("grid-campeonatos");
+    const gridInscricoes = document.getElementById("grid-inscricoes");
+    const selectCampeonato = document.getElementById("campeonato-escolhido");
 
+    if (gridCampeonatos && selectCampeonato) {
         const inscricoesSalvas = JSON.parse(localStorage.getItem("gamematch_torneios") || "[]");
-        inscricoesSalvas.forEach(item => {
-            const aviso = document.createElement("article");
-            aviso.className = "player-card";
-            aviso.style.borderLeft = "4px solid #10b981";
-            aviso.innerHTML = `
+        const torneiosCriados = JSON.parse(localStorage.getItem("gamematch_torneios_criados") || "[]");
+
+        function calcularVagas(nomeTorneio, limiteMax) {
+            const total = inscricoesSalvas.filter(i => i.campeonato === nomeTorneio).length;
+            return `${total} / ${limiteMax}`;
+        }
+
+        function adicionarOpcaoSelect(nome) {
+            if (![...selectCampeonato.options].some(opt => opt.value === nome)) {
+                const option = document.createElement("option");
+                option.value = nome;
+                option.textContent = nome;
+                selectCampeonato.appendChild(option);
+            }
+        }
+
+        [...selectCampeonato.options].forEach(opt => adicionarOpcaoSelect(opt.value));
+
+        function renderizarTorneioNoGrid(t) {
+            const vagasAtuais = calcularVagas(t.nome, t.vagas);
+            const card = document.createElement("article");
+            card.className = "player-card feature-card";
+            card.style.borderLeft = "4px solid #8b5cf6";
+            card.setAttribute("data-torneio-nome", t.nome);
+            card.innerHTML = `
                 <div class="card-header">
-                    <h3>${item.equipe}</h3>
-                    <span class="status-online">Inscrito</span>
+                    <h3>${t.nome}</h3>
+                    <span class="game-tag">${t.jogo}</span>
                 </div>
-                <p><strong>Campeonato:</strong> ${item.campeonato}</p>
-                <p><strong>Capitão:</strong> ${item.capitao}</p>
+                <div class="card-details">
+                    <p><strong>Formato:</strong> ${t.formato}</p>
+                    <p class="vagas-texto"><strong>Vagas:</strong> ${vagasAtuais}</p>
+                </div>
+                <p style="color: var(--cor-secundario); font-weight: 700;">Premiação: ${t.premio}</p>
             `;
-            gridTorneios.appendChild(aviso);
+            gridCampeonatos.appendChild(card);
+            adicionarOpcaoSelect(t.nome);
+        }
+
+        document.querySelectorAll("#grid-campeonatos .player-card").forEach(card => {
+            const h3 = card.querySelector("h3");
+            if (h3) {
+                const nomeT = h3.textContent.trim();
+                const pVagas = card.querySelector(".card-details p:nth-child(2)");
+                if (pVagas) {
+                    const matchLimite = pVagas.textContent.match(/\/\s*(\d+)/);
+                    const limite = matchLimite ? matchLimite[1] : "16";
+                    pVagas.innerHTML = `<strong>Vagas:</strong> ${calcularVagas(nomeT, limite)}`;
+                }
+            }
         });
 
-        formTorneio.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const equipe = document.getElementById("time").value.trim();
-            const selectCamp = document.getElementById("campeonato-escolhido");
-            const campeonato = selectCamp.options[selectCamp.selectedIndex].text;
-            const capitao = document.getElementById("capitao").value.trim();
+        torneiosCriados.forEach(renderizarTorneioNoGrid);
 
-            const novaInscricao = { equipe, campeonato, capitao };
-            inscricoesSalvas.push(novaInscricao);
-            localStorage.setItem("gamematch_torneios", JSON.stringify(inscricoesSalvas));
+        if (formCriarTorneio) {
+            formCriarTorneio.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const novoTorneio = {
+                    nome: document.getElementById("nome-novo-torneio").value.trim(),
+                    jogo: document.getElementById("jogo-novo-torneio").value,
+                    formato: document.getElementById("formato-novo-torneio").value.trim(),
+                    vagas: document.getElementById("vagas-novo-torneio").value.trim(),
+                    premio: document.getElementById("premio-novo-torneio").value.trim()
+                };
 
-            const novoCard = document.createElement("article");
-            novoCard.className = "player-card";
-            novoCard.style.borderLeft = "4px solid #10b981";
-            novoCard.innerHTML = `
-                <div class="card-header">
-                    <h3>${equipe}</h3>
-                    <span class="status-online">Inscrito Agora</span>
-                </div>
-                <p><strong>Campeonato:</strong> ${campeonato}</p>
-                <p><strong>Capitão:</strong> ${capitao}</p>
-            `;
-            gridTorneios.appendChild(novoCard);
+                torneiosCriados.push(novoTorneio);
+                localStorage.setItem("gamematch_torneios_criados", JSON.stringify(torneiosCriados));
+                renderizarTorneioNoGrid(novoTorneio);
 
-            formTorneio.reset();
-            mostrarNotificacao(`Equipe "${equipe}" inscrita com sucesso em ${campeonato}!`);
-        });
+                formCriarTorneio.reset();
+                mostrarNotificacao(`Torneio "${novoTorneio.nome}" publicado na Arena com sucesso!`);
+            });
+        }
+
+        if (formTorneio && gridInscricoes) {
+            function renderizarInscricao(item) {
+                const aviso = document.createElement("article");
+                aviso.className = "player-card";
+                aviso.style.borderLeft = "4px solid #10b981";
+                aviso.innerHTML = `
+                    <div class="card-header">
+                        <h3>${item.equipe}</h3>
+                        <span class="status-online">Inscrito</span>
+                    </div>
+                    <p><strong>Campeonato:</strong> ${item.campeonato}</p>
+                    <p><strong>Capitão:</strong> ${item.capitao}</p>
+                `;
+                gridInscricoes.appendChild(aviso);
+            }
+
+            inscricoesSalvas.forEach(renderizarInscricao);
+
+            formTorneio.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const equipe = document.getElementById("time").value.trim();
+                const campeonato = selectCampeonato.options[selectCampeonato.selectedIndex].text;
+                const capitao = document.getElementById("capitao").value.trim();
+
+                const novaInscricao = { equipe, campeonato, capitao };
+                inscricoesSalvas.push(novaInscricao);
+                localStorage.setItem("gamematch_torneios", JSON.stringify(inscricoesSalvas));
+                renderizarInscricao(novaInscricao);
+
+                document.querySelectorAll("#grid-campeonatos .player-card").forEach(card => {
+                    const h3 = card.querySelector("h3");
+                    if (h3 && h3.textContent.trim() === campeonato) {
+                        const pVagas = card.querySelector(".card-details p:nth-child(2)") || card.querySelector(".vagas-texto");
+                        if (pVagas) {
+                            const matchLimite = pVagas.textContent.match(/\/\s*([^\s]+)/);
+                            const limite = matchLimite ? matchLimite[1] : "16";
+                            pVagas.innerHTML = `<strong>Vagas:</strong> ${calcularVagas(campeonato, limite)}`;
+                        }
+                    }
+                });
+
+                formTorneio.reset();
+                mostrarNotificacao(`Equipe "${equipe}" inscrita com sucesso em ${campeonato}!`);
+            });
+        }
     }
 
-    const formPerfil = document.querySelector('form[action="meuperfil.html"]');
+    const formPerfil = document.getElementById("form-perfil");
     if (formPerfil) {
         const perfil = obterPerfil();
         const tituloNick = document.querySelector(".info-section h3");
@@ -218,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const formSuporte = document.querySelector('form[action="suporte.html"]');
+    const formSuporte = document.getElementById("form-suporte");
     if (formSuporte) {
         formSuporte.addEventListener("submit", (e) => {
             e.preventDefault();
