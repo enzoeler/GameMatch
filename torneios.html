@@ -11,7 +11,7 @@
 
     <header>
         <nav aria-label="Navegação Principal">
-            <a href="home.html" class="brand-logo">
+            <a href="index.html" class="brand-logo">
                 <svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="64" height="64" rx="16" fill="#182238" stroke="#23314d" stroke-width="2"/>
                     <path d="M18 24h28a8 8 0 0 1 8 8v8a6 6 0 0 1-10.2 4.2L39 39.5H25l-4.8 4.7A6 6 0 0 1 10 40v-8a8 8 0 0 1 8-8z" fill="#8b5cf6"/>
@@ -30,7 +30,7 @@
             </label>
 
             <ul>
-                <li><a href="home.html">Início</a></li>
+                <li><a href="index.html">Início</a></li>
                 <li><a href="matchmaking.html">Procurar Duo</a></li>
                 <li><a href="torneios.html">Torneios</a></li>
                 <li><a href="meuperfil.html">Meu Perfil</a></li>
@@ -43,13 +43,14 @@
     <main>
         <div class="page-header">
             <h1>Arena de Campeonatos</h1>
-            <p>Mostre do que sua equipe é capaz. Inscreva seu time nos torneios amadores da semana e dispute premiações.</p>
+            <p>Mostre do que sua equipe é capaz. Inscreva seu time nos torneios amadores da semana ou crie o seu próprio campeonato.</p>
         </div>
 
+        <!-- 1. Lista de Campeonatos (Grid de Cards) -->
         <section class="cards-section">
             <h2 class="section-title">Campeonatos Abertos</h2>
             
-            <div class="cards-grid">
+            <div class="cards-grid" id="grid-campeonatos">
                 <article class="player-card feature-card">
                     <div class="card-header">
                         <h3>Copa Amadora Free Fire</h3>
@@ -76,6 +77,60 @@
             </div>
         </section>
 
+        <!-- 2. Seção de Inscrições de Times (Cards de Inscritos aparecem aqui) -->
+        <section class="cards-section" style="margin-top: 32px;">
+            <h2 class="section-title">Times Inscritos nos Campeonatos</h2>
+            <div class="cards-grid" id="grid-inscricoes">
+                <!-- Inscritos via LocalStorage entram aqui dinamicamente -->
+            </div>
+        </section>
+
+        <!-- 3. Formulário de Criar Torneio -->
+        <section class="filter-box" style="margin-top: 32px;">
+            <form id="form-criar-torneio" class="filter-form">
+                <fieldset>
+                    <legend>Criar Novo Torneio (Organizador)</legend>
+                    
+                    <div class="filter-grid">
+                        <div class="field-group">
+                            <label for="nome-novo-torneio">Nome do Campeonato:</label>
+                            <input type="text" id="nome-novo-torneio" placeholder="Ex: Copa Valorant Comunidade" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="jogo-novo-torneio">Jogo / Plataforma:</label>
+                            <select id="jogo-novo-torneio">
+                                <option value="Free Fire (Mobile/Emulador)">Free Fire (Mobile/Emulador)</option>
+                                <option value="Valorant (PC)">Valorant (PC)</option>
+                                <option value="CS2 (PC)">Counter-Strike 2 (PC)</option>
+                                <option value="League of Legends / Wild Rift">League of Legends / Wild Rift</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filter-grid" style="margin-top: 14px;">
+                        <div class="field-group">
+                            <label for="formato-novo-torneio">Formato:</label>
+                            <input type="text" id="formato-novo-torneio" placeholder="Ex: 5v5 Mata-Mata" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="vagas-novo-torneio">Limite de Equipes:</label>
+                            <input type="text" id="vagas-novo-torneio" placeholder="Ex: 16 Times" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="premio-novo-torneio">Premiação:</label>
+                            <input type="text" id="premio-novo-torneio" placeholder="Ex: R$ 500,00 + Troféu" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit" style="margin-top: 14px;">Publicar Torneio na Arena</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- 4. Formulário de Inscrever Meu Time -->
         <section class="filter-box" style="margin-top: 32px;">
             <form id="form-torneio" class="filter-form">
                 <fieldset>
@@ -89,8 +144,8 @@
                     <div class="field-group">
                         <label for="campeonato-escolhido">Escolha o Campeonato:</label>
                         <select id="campeonato-escolhido" name="campeonato">
-                            <option value="ff">Copa Amadora Free Fire</option>
-                            <option value="wr">Liga Wild Rift Open Series</option>
+                            <option value="Copa Amadora Free Fire">Copa Amadora Free Fire</option>
+                            <option value="Liga Wild Rift Open Series">Liga Wild Rift Open Series</option>
                         </select>
                     </div>
 
